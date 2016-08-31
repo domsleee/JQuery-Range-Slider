@@ -1,0 +1,18 @@
+{
+  "name": "Range-Slider",
+  "version": "0.0.1",
+  "author": "Dom Slee",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify":  ">1.0.0",
+    "grunt-contrib-cssmin":  ">1.0.0"
+  },
+  "description": "A JS and JQuery implementation of a range slider",
+  "main": "grunt.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/domsleee/JQuery-Range-Slider"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/domsleee/JQuery-Range-Slider"
+}
