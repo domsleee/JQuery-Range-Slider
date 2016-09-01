@@ -1,7 +1,10 @@
-/* Range slider */
 div.rangeslider {
+	box-sizing:content-box;
 	height:1em;
 	position:relative;
+}
+div.rangeslider *{
+	box-sizing:content-box;
 }
 div.rangeslider div {
 	position:absolute;
