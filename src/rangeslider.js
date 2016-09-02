@@ -13,9 +13,9 @@
 // * colour     : Circle and bar colour
 
 // Optional Methods:
-// * onTouchDown
-// * onTouchMove
-// * onTouchUp
+// * onDown
+// * onMove
+// * onUp
 // * setBar(percentage)
 
 (function() {
@@ -133,8 +133,8 @@ RangeSlider.prototype = {
             var percentage = _this.getPercentage(_this.lastCoordinates);
             _this.percentage = percentage;
 
-            if (typeof(_this.onTouchDown) === "function") {
-                _this.onTouchDown(e, percentage);
+            if (typeof(_this.onDown) === "function") {
+                _this.onDown(e, percentage*100);
             }
         });
 
@@ -158,7 +158,7 @@ RangeSlider.prototype = {
                         // Call the function with appropriate datea
                         var percentage = _this.getPercentage(_this.lastCoordinates);
                         _this.percentage = percentage;
-                        _this.onMove(e, percentage);
+                        _this.onMove(e, percentage*100);
 
                         // Update the last call time
                         _this.lastPoll = time;
@@ -174,11 +174,11 @@ RangeSlider.prototype = {
                 var percentage = _this.getPercentage(_this.lastCoordinates);
                 _this.percentage = percentage;
 
-                if (typeof(_this.onTouchUp) === "function") {
+                if (typeof(_this.onUp) === "function") {
                     if (typeof(_this.onMove) === "function") {
-                        _this.onMove(e, percentage);
+                        _this.onMove(e, percentage*100);
                     }
-                    _this.onTouchUp(e, percentage);
+                    _this.onUp(e, percentage*100);
                 }
             }
         };
@@ -230,6 +230,10 @@ RangeSlider.prototype = {
         return percentage;
     },
     setBar: function(percentage) {
+        if (percentage < 0 || percentage > 1) {
+           throw new Error("RangeSlider: setBar expects a percentage between 0-1, ", percentage, "given");
+        }
+
         // Determine how far left 
         var width = this.$el.width() * percentage;
         var left = width;
@@ -278,6 +282,8 @@ RangeSlider.prototype = {
             marginLeft:styles.marginLeft
         })
     },
+
+    // Library functions
     setDisabled: function(disabled) {
         this.disabled = disabled;
         if (disabled) {
@@ -285,6 +291,12 @@ RangeSlider.prototype = {
         } else {
             this.$el.removeClass("disabled");
         }
+    },
+    setPercentage: function(percentage) {
+        if (percentage < 0 || percentage > 100) {
+            throw new Error("RangeSlider: setPercentage expects a percentage between 0-100, ", percentage, "given");
+        }
+        this.setBar(percentage/100);
     }
 
 }
