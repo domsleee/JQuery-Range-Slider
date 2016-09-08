@@ -10,13 +10,18 @@
 // * multiple   : The multiple of the size the circle reaches when clicked
 // * borderSize : The size of the border that surrounds the circle
 // * percentage : Starting position
-// * colour     : Circle and bar colour
+// * fgColour   : Circle and bar colour
+// * bgColour   : Background colour
 
-// Optional Methods:
+// Events:
 // * onDown
 // * onMove
 // * onUp
-// * setBar(percentage)
+
+// Library functions:
+// * setPercentage(percentage)
+// * disable()
+// * enable()
 
 (function() {
 
@@ -284,13 +289,11 @@ RangeSlider.prototype = {
     },
 
     // Library functions
-    setDisabled: function(disabled) {
-        this.disabled = disabled;
-        if (disabled) {
-            this.$el.addClass("disabled");
-        } else {
-            this.$el.removeClass("disabled");
-        }
+    disable: function() {
+        this.$el.addClass("disabled");
+    },
+    enable: function() {
+        this.$el.removeClass("disabled");
     },
     setPercentage: function(percentage) {
         if (percentage < 0 || percentage > 100) {
