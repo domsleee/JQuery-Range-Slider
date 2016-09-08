@@ -2,12 +2,16 @@
 
 A JS & JQuery implementation of a range slider, inspired by Android's range sliders.
 
+### <a href="https://domsleee.github.io/JQuery-Range-Slider/">======= Live Demo =======</a>
+
 <a href="https://domsleee.github.io/JQuery-Range-Slider/"><img width=235 src="https://puu.sh/qYqsv/1d283527a6.png"></a>
 
 <a href="https://domsleee.github.io/JQuery-Range-Slider/"><img width=235 src="https://puu.sh/qYqou/ea4abe298c.png"></a>
-## Sample Usage
 
-Download the relevant files and include them:
+
+## Getting Started
+
+Include JQuery and [relevant files](https://github.com/domsleee/JQuery-Range-Slider/tree/master/dist) in your html `<head>` tag:
 
 ~~~html
 <!-- Rangeslider files -->
@@ -16,13 +20,19 @@ Download the relevant files and include them:
 <script src="rangeslider/rangeslider.min.js"></script>
 ~~~~
 
-Apply RangeSlider to a JQuery object:
+Make an appropriately sized `div` for the rangeslider within your html `<body>`:
+
+~~~html
+<div id="slider_1" style="width:200px;"></div>
+~~~
+
+Apply RangeSlider to a JQuery object within a script:
 
 ~~~JavaScript
-var slider = new RangeSlider($("#el"), {
+var slider = new RangeSlider($("#slider_1"), {
   // Colours
-  fgColour: #04b404, // Foreground colour
-  bgColour: #ddd   , // Background colour
+  fgColour: "#04b404", // Foreground colour
+  bgColour: "#ddd"   , // Background colour
   
   // Starting position
   percentage: 20,
@@ -40,7 +50,10 @@ var slider = new RangeSlider($("#el"), {
 });
 ~~~
 
-Library functions:
+## Library functions
+
+The following functions can be called on the RangeSlider object after it has been initialised:
+
 ~~~JavaScript
 // Disable the range slider
 // This will disable slider movement and events
