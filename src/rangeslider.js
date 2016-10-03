@@ -291,9 +291,11 @@ RangeSlider.prototype = {
     // Library functions
     disable: function() {
         this.$el.addClass("disabled");
+        this.disabled = true;
     },
     enable: function() {
         this.$el.removeClass("disabled");
+        this.disabled = false;
     },
     setPercentage: function(percentage) {
         if (percentage < 0 || percentage > 100) {
@@ -301,7 +303,6 @@ RangeSlider.prototype = {
         }
         this.setBar(percentage/100);
     }
-
 }
 window.RangeSlider = RangeSlider;
 
