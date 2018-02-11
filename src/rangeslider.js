@@ -125,7 +125,7 @@ RangeSlider.prototype = {
 
         this.$el.on("touchstart mousedown", function(e) {
             e.preventDefault();
-            if (_this.disabled) return;
+            if (_this.disabled || e.button != 0) return;
 
             // Set it as active
             _this.setState("active");
