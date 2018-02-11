@@ -39,9 +39,18 @@
       </ul>
 
       <h3>Example</h3>
-
       <div class="opacity-box" style="background-color:red; opacity:0.2">20</div><div class="opacity-box" style="background-color:green; opacity:0.2">20</div>
-      <div id="slider_1" style="width:400px; max-width:100%"></div><br />
+      <h4>Left aligned</h4>
+      <div id="slider_1" style="width:400px; max-width:100%"></div>
+      <h4>Center aligned</h4>
+      <div id="slider_2" style="width:400px; max-width:100%; margin:auto"></div>
+      <h4>Right aligned</h4>
+      <div style="position:relative; height:2em; width:100%">
+      </div>
+
+      <div style="height:2em; width:100%; position:relative">
+        <div id="slider_3" style="width:400px; max-width:100%; position:absolute; right:0"></div>
+      </div>
       <button onclick="range.enable()">Enable</button>
       <button onclick="range.disable()">Disable</button><br />
 
@@ -65,5 +74,7 @@
       onDown: onMove,
       pollLimit: 60
     });
+    new RangeSlider($("#slider_2"));
+    new RangeSlider($("#slider_3"));
   </script>
 </html>
