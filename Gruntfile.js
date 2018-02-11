@@ -26,7 +26,7 @@ module.exports = function(grunt) {
 
         shell: {
             deploy: {
-                command: "git subtree push --prefix dist origin gh-pages"
+                command: "git add dist && git subtree push --prefix dist origin gh-pages"
             }
         }
     });
