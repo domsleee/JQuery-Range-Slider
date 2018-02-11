@@ -90,16 +90,14 @@ RangeSlider.prototype = {
             rangeselector:defStyle
         };
 
-        if (this.size) {
-            var totalSize = 2*this.borderSize + this.size*this.multiple;
-            this.$el.css("height", totalSize+"em");
+        var totalSize = 2*this.borderSize + this.size*this.multiple;
+        this.$el.css("height", totalSize+"em");
 
-            var height = this.size * this.ratio;
-            var margin = (totalSize - height)/2;
+        var height = this.size * this.ratio;
+        var margin = (totalSize - height)/2;
 
-            styles.rangeouter += "height:"+height+"em;margin:"+margin+"em 0;";
-            styles.rangeinner += "height:"+height+"em;margin:"+margin+"em 0;";
-        }
+        styles.rangeouter += "height:"+height+"em;margin:"+margin+"em 0;";
+        styles.rangeinner += "height:"+height+"em;margin:"+margin+"em 0;";
         styles.rangeselector += "border-radius:" + (this.size*this.multiple) + "em;";
 
         // Append to the given element
