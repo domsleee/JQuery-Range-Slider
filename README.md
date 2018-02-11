@@ -65,3 +65,25 @@ slider.enable();
 // Change the position of the slider to 30%
 slider.setPercentage(30);
 ~~~
+
+## Development
+
+Install all `npm` modules:
+
+~~~bash
+npm install .
+~~~
+
+This project uses grunt to minify the javascript and css files from `src/` and move them into `dist/rangeslider/`.
+
+To build:
+
+~~~bash
+grunt
+~~~
+
+To build every time a script or stylesheet is changed:
+
+~~~bash
+grunt watch
+~~~
