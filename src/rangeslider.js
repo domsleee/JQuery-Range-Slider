@@ -220,7 +220,7 @@ RangeSlider.prototype = {
     },
     getPercentage: function(coordinates) {
         // Find how far across the cursor is relative to the element
-        var width = coordinates.x - this.$el[0].offsetLeft;
+        var width = coordinates.x - this.$el[0].getBoundingClientRect().x;
         
         // Check the inner and outer bounds, and reduce if necessary
         if (width < 0) width = 0;
