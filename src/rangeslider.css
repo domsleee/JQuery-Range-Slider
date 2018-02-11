@@ -1,6 +1,5 @@
 div.rangeslider {
     box-sizing:content-box;
-    height:1em;
     position:relative;
 }
 div.rangeslider *{
@@ -9,26 +8,15 @@ div.rangeslider *{
 div.rangeslider div {
     position:absolute;
 }
-div.rangeslider .rangeouter, div.rangeslider .rangeinner {
-    height:0.3em;
-    margin:0.75em 0;
-}
 div.rangeslider .rangeouter {
     background:#ddd;
     width:100%;
 }
 div.rangeslider .rangeinner {
     background:#04B404;
-    width:5em;
 }
 div.rangeslider .rangeselector {
-    margin-left:-0.9em;
-    border-radius:1em;
-    height:1em;
-    width:1em;
     background:#04B404;
-    /* 5em - border (0.4em) - width/2 (0.5em) */
-    left:4.1em;
     background-clip:padding-box;
     border:0.4em solid rgba(0, 0, 0, 0);
 }
