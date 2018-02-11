@@ -16,6 +16,7 @@
   "license": "MIT",
   "homepage": "https://github.com/domsleee/JQuery-Range-Slider",
   "dependencies": {
+    "grunt-contrib-watch": "^1.0.0",
     "grunt-shell": "^2.1.0"
   }
 }
