@@ -4,8 +4,8 @@
   "author": "Dom Slee",
   "devDependencies": {
     "grunt": "^0.4.5",
-    "grunt-contrib-uglify":  ">1.0.0",
-    "grunt-contrib-cssmin":  ">1.0.0"
+    "grunt-contrib-uglify": ">1.0.0",
+    "grunt-contrib-cssmin": ">1.0.0"
   },
   "description": "A JS and JQuery implementation of a range slider",
   "main": "grunt.js",

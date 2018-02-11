@@ -4,8 +4,8 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    "dist/rangeslider.min.js": [
-                		"src/*.js"
+                    "dist/rangeslider/rangeslider.min.js": [
+                        "src/*.js"
                     ]
                 }
             }
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     expand:true,
                     cwd:"src",
                     src:["*.css"],
-                    dest:"dist/",
+                    dest:"dist/rangeslider/",
                     ext:".min.css"
                 }]
             }
