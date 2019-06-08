@@ -51,8 +51,8 @@
       <div style="height:2em; width:100%; position:relative">
         <div id="slider_3" style="width:400px; max-width:100%; position:absolute; right:0"></div>
       </div>
-      <button onclick="range.enable()">Enable</button>
-      <button onclick="range.disable()">Disable</button><br />
+      <button onclick="enableRanges()">Enable</button>
+      <button onclick="disableRanges()">Disable</button><br />
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/domsleee/JQuery-Range-Slider">JQuery-Range-Slider</a> is maintained by <a href="https://github.com/domsleee">domsleee</a>.</span>
@@ -74,7 +74,18 @@
       onDown: onMove,
       pollLimit: 60
     });
-    new RangeSlider($("#slider_2"));
-    new RangeSlider($("#slider_3"));
+    var range1 = new RangeSlider($("#slider_2"));
+    var range2 = new RangeSlider($("#slider_3"));
+
+    function enableRanges() {
+      range.enable();
+      range1.enable();
+      range2.enable();
+    }
+    function disableRanges() {
+      range.disable();
+      range1.disable();
+      range2.disable();
+    }
   </script>
 </html>
