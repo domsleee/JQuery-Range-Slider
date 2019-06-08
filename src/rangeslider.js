@@ -123,9 +123,9 @@ RangeSlider.prototype = {
     events: function() {
         var _this = this;
 
-        this.$el.on("touchstart mousedown", function(e) {
+        var onMouseDown = function(e) {
             e.preventDefault();
-            if (_this.disabled || e.button != 0) return;
+            if (_this.disabled || (e.button != 0 && e.type != 'touchstart')) return;
 
             // Set it as active
             _this.setState("active");
@@ -139,10 +139,10 @@ RangeSlider.prototype = {
             if (typeof(_this.onDown) === "function") {
                 _this.onDown(e, percentage*100);
             }
-        });
+        };
 
         var onMove = function(e) {
-            e.preventDefault();
+            if (e.type !== "touchmove") e.preventDefault();
             // Check if active (needed for mouse events)
             if (_this.active === true) {
                 var coordinates = _this.getCoordinates(e);
@@ -187,10 +187,12 @@ RangeSlider.prototype = {
         };
 
         // Touch events
-        this.$el.on("touchmove", onMove);
-        this.$el.on("touchend", onLeave);
+        this.$el.on("touchstart", onMouseDown);
+        $(document).on("touchmove", onMove);
+        $(document).on("touchend", onLeave);
 
         // Mouse events
+        this.$el.on("mousedown", onMouseDown);
         $(document).on("mousemove", onMove);
         $(document).on("mouseup mouseleave", onLeave);
     },
